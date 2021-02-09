@@ -1,0 +1,32 @@
+    <div class="wrapper fadeInDown">
+        <div id="formContent"> 
+            <div class="fadeIn first">
+              <h3>Tenha acesso ao artigo completo</h3>
+            </div>
+              <form>
+                Responda as perguntas a seguir da forma mais honesta e sincera possível para sabermos se esta descoberta pode te ajudar.
+    
+                <section class="row">
+                         
+                    <div class="message" style="text-align: left">
+                      <div class="message">
+                        Qual o seu Gênero?
+                        <div class="fadeIn first">
+                          <input type="checkbox" name="answer" id="mostrar1" data-ng-model="myCheck1" data-ng-disabled="myCheck2 || myCheck3">      <label for="mostrar1">Homem</label>
+                        </div>
+                        <div class="fadeIn first">
+                          <input type="checkbox" name="answer" id="mostrar2" data-ng-model="myCheck2" data-ng-disabled="myCheck1 || myCheck3">      <label for="mostrar2">Mulher</label>
+                        </div>
+                        <div class="fadeIn first">
+                          <input type="checkbox" name="answer" id="mostrar3" data-ng-model="myCheck3" data-ng-disabled="myCheck1 || myCheck2">      <label for="mostrar3">Prefiro não dizer</label>
+                        </div>
+                      </div>
+                    </div><br>
+                    <button class="btn btn-success pull-right" data-ng-show="myCheck1 || myCheck2 || myCheck3"><a [routerLink]="['/questao2']" style="color:whitesmoke"> Confirmar</a></button>
+    
+    
+                </section>
+              </form>
+            </div>
+          </div>
+        

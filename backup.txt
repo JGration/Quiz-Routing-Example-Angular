@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-ng-app="MeuModulo">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo da saúde, artigo</title>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="assets/css/materialize.min.css">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .message {
+      padding: 10px;
+      transition: all linear 0.5s;
+      background-color: rgb(248, 248, 248);
+      height: 15%;
+    }
+    .ng-hide {
+      height: 0;
+    }
+  </style>
+  </head>
+
+
+<body data-ng-controller="UserController as User" class="wrapper">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <div class="fadeIn first">
+            <h3>Tenha acesso ao artigo completo</h3>
+          </div>
+          <form>
+              Responda as perguntas a seguir da forma mais honesta e sincera possível para sabermos se esta descoberta pode te ajudar.
+
+            <section class="row">
+                     
+                <div class="message" style="text-align: left">
+                  <div class="message">
+                    Qual o seu Gênero?
+                    <div class="fadeIn second">
+                      <input type="checkbox" name="answer" id="mostrar1" data-ng-model="myCheck1" data-ng-disabled="myCheck2 || myCheck3">      <label for="mostrar1">Homem</label>
+                    </div>
+                    <div class="fadeIn second">
+                      <input type="checkbox" name="answer" id="mostrar2" data-ng-model="myCheck2" data-ng-disabled="myCheck1 || myCheck3">      <label for="mostrar2">Mulher</label>
+                    </div>
+                    <div class="fadeIn second">
+                      <input type="checkbox" name="answer" id="mostrar3" data-ng-model="myCheck3" data-ng-disabled="myCheck1 || myCheck2">      <label for="mostrar3">Prefiro não dizer</label>
+                    </div>
+                  </div>
+                </div><br>
+                <button class="btn btn-success pull-right" data-ng-show="myCheck1 || myCheck2 || myCheck3"><a [routerLink]="['/questao2']" style="color:whitesmoke"> Confirmar</button></a>
+                <a routerLink="/questao2" style="color:whitesmoke"> Confirmar</a>
+                <a [routerLink]="['/questao2']" style="color:whitesmoke"> Confirmar</a>
+                <a href="/questao2" style="color:whitesmoke"> Confirmar</button></a>
+
+
+            </section>
+          </form>
+        </div>
+      </div>
+
+      <footer>
+          <a class="underlineHover" href="https://gnesis.com.br/politica-de-privacidade/" style="color: black">Politicas de Privacidade</a>
+      </footer>
+
+      
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.js"></script>
+
+<script>
+      angular.module('MeuModulo', ['ngAnimate'])
+      .controller('UserController', UserController);
+function UserController() {
+        var vm = this;
+        vm.titulo = 'Protocolo da saúde, artigo';
+}
+
+
+</script>
+<app-root></app-root>
+</body>
+</html> 

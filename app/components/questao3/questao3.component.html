@@ -1,0 +1,29 @@
+<div class="wrapper">
+        <div id="formContent">
+          <div>
+            <h3>Tenha acesso ao artigo completo</h3>
+          </div>
+          <form>
+              Responda as perguntas a seguir da forma mais honesta e sincera possível para sabermos se esta descoberta pode te ajudar.
+
+            <section class="row">
+                <div class="message" style="text-align: center">
+                  Questão 1 <img src="./assets/images/certo.png" style="width: 5.5%"> Questão 2 <img src="./assets/images/certo.png" style="width: 5.5%"> <br style="line-height:0px;" />
+                  <div class="message" style="text-align: left">
+                    Você tem a mente aberta para novas descobertas cientificas?
+                    <div class="fadeIn first">
+                            <input type="checkbox" name="progress" id="mostrar7" value="1" tabIndex="1" onClick="ckChange(this)" data-ng-model="myCheck7">      <label for="mostrar7">Sim</label>
+                    </div>
+                    <div class="fadeIn first">
+                            <input type="checkbox" name="progress" id="mostrar8" value="1" tabIndex="1" onClick="ckChange(this)" data-ng-model="myCheck8">      <label for="mostrar8">Não</label>
+                    </div>
+                  </div>
+                </div><br>
+                <button class="btn btn-success pull-right" data-ng-show="myCheck7 || myCheck8"><a [routerLink]="['/link']" style="color:whitesmoke"> Confirmar</a></button>
+
+
+            </section>
+          </form>
+        </div>
+      </div>
+    

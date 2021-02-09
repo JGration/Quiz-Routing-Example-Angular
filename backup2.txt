@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html data-ng-app="MeuModulo">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo da saúde, artigo</title>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="assets/css/materialize.min.css">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .message {
+      padding: 15px;
+      transition: all linear 0.5s;
+      background-color: rgb(248, 248, 248);
+      height: 15%;
+    }
+    .ng-hide {
+      height: 0;
+    }
+  </style>
+  </head>
+
+
+<body data-ng-controller="UserController as User" class="wrapper">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <div class="fadeIn first">
+            <h3>Tenha acesso ao artigo completo</h3>
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+              Responda as perguntas a seguir da forma mais honesta e sincera possível para sabermos se esta descoberta pode te ajudar.
+            <!--<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">-->
+            <section class="row">
+                     
+                <div class="message" data-ng-hide="myCheck1 || myCheck2 || myCheck3" style="text-align: left">
+                  <div class="message">
+                    Qual o seu Gênero?
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar1" data-ng-model="myCheck1">      <label for="mostrar1">Homem</label>
+                    </div>
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar2" data-ng-model="myCheck2">      <label for="mostrar2">Mulher</label>
+                    </div>
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar3" data-ng-model="myCheck3">      <label for="mostrar3">Prefiro não dizer</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="message" data-ng-show="myCheck1 || myCheck2 || myCheck3" style="text-align: left">
+                  Questão 1 <img src="assets/images/certo.png" class="fadeIn second" style="width: 5%">
+                  <div class="message" data-ng-hide="myCheck4 || myCheck5 || myCheck6">
+                    Quantos anos você tem?
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar4" data-ng-model="myCheck4">      <label for="mostrar4">Entre 35 a 50</label>
+                    </div>
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar5" data-ng-model="myCheck5">      <label for="mostrar5">De 50 a 60</label>
+                    </div>
+                    <div class="fadeIn first">
+                      <input type="checkbox" id="mostrar6" data-ng-model="myCheck6">      <label for="mostrar6">Acima de 60</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="message" data-ng-show="myCheck4 || myCheck5 || myCheck6" style="text-align: left">
+                    Questão 2 <img src="assets/images/certo.png" class="fadeIn second" style="width: 5%">
+                    <div class="message" data-ng-hide="myCheck7 || myCheck8">
+                      Você tem a mente aberta para novas descobertas cientificas?
+                      <div class="fadeIn first">
+                        <input type="checkbox" id="mostrar7" data-ng-model="myCheck7">      <label for="mostrar7">Sim</label>
+                      </div>
+                      <div class="fadeIn first">
+                        <input type="checkbox" id="mostrar8" data-ng-model="myCheck8">      <label for="mostrar8">Não</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="message" data-ng-show="myCheck7 || myCheck8 " style="text-align: left">
+                    Questão 3 <img src="assets/images/certo.png" class="fadeIn second" style="width: 5%">
+                      <div class="message" data-ng-hide="myCheck9 || myCheck10">
+                          Você respondeu as questões honestamente? 
+                          <div class="fadeIn first">
+                              <input type="checkbox" id="mostrar9" data-ng-model="myCheck9">      <label for="mostrar9">Sim</label>
+                            </div>
+                            <div class="fadeIn first">
+                                <input type="checkbox" id="mostrar10" data-ng-model="myCheck10" onClick="refreshPage()">      <label for="mostrar10" style="color:coral">Não, quero responder novamente!</label>
+                            </div>
+                        </div>
+                    </div>
+
+                  <div class="message" data-ng-show="myCheck9" id="divIDgif" style="text-align: center">
+                      <img ng-src="assets/images/loading.gif">
+                  </div>
+                
+                  <div class="fadeIn fourth" data-ng-show="myCheck9" style="text-align: center">
+                    <br>Parabéns! Você está apto para fazer o tratamento com o <b>novo produto</b> que acaba de chegar ao Brasil!<br>Acesse clicando abaixo:<br>
+                  </div>
+
+            </section>
+          </form>
+          
+          <div id="formFooter" class="fadeIn fourth" data-ng-show="myCheck9" style="height: 15%">
+            <a class="underlineHover" href="https://oprotocolodalongevidade.com/oprotocolo"><font size="5"> Me leve até lá!</font></a>
+          </div>
+      
+        </div>
+      </div>
+
+      <footer>
+          <a class="underlineHover" href="https://gnesis.com.br/politica-de-privacidade/" style="color: black">Politicas de Privacidade</a>
+      </footer>
+
+      
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+ <script src="
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.js"></script>
+    <script>
+      angular.module('MeuModulo', ['ngAnimate'])
+      .controller('UserController', UserController);
+function UserController() {
+        var vm = this;
+        vm.titulo = 'Protocolo da saúde, artigo';
+}
+
+function refreshPage(){
+    window.location.reload();
+
+    setTimeout(function(){
+  $('#divIDgif').remove();
+}, 5000);
+} 
+</script>
+  </body>
+</html> 
